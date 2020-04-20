@@ -1,0 +1,50 @@
+#wrapper {
+    width: 70%;
+    margin: auto;
+  }
+
+  div.sub1.special{
+      background-color: #eeeeee;
+      text-transform: uppercase;
+  }
+
+  span {
+    /*inline block, inline grid, inline (spans default)*/
+    display: block;
+    margin: 5px;
+  }
+  div {
+    margin: 20px;
+  }
+
+  .political {
+      color: rgb(72, 255, 72);
+  }
+  .sub1.special {
+      font-weight: bold;
+  }
+
+  p.sub3 {
+      background-color: #ffffff;
+  }
+
+  input[type="button"]{
+      font-size: 32px;
+  }
+  input:checked + label{
+      color: magenta;
+  }
+
+  span.sub1[computers="yes"] {
+      color: orange;
+      transition: 100ms;
+  }
+  span.sub1[computers="yes"]:hover {
+      background-color: green;
+  }
+
+  span.sub1,
+  .sub2 {
+    background-color: darkgreen;
+  }
+  
