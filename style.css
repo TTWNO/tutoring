@@ -1,0 +1,33 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#input-wrapper {
+    text-align: center;
+    padding: 10px;
+}
+
+body {
+    background-color: #222222;
+}
+
+#cards {
+    margin: 15px;
+}
+
+.red {
+    color: red;
+}
+.black {
+    color: black;
+}
+
+.card {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    padding: 50px 25px;
+    background-color: white;
+    margin: 10px;
+}
