@@ -3,19 +3,6 @@ const CLUB = "&#x2663;";
 const HEART = "&#x2665;";
 const DIAMOND = "&#x2666;";
 
-// example: someCardElement.innerText = "A" + SPADE
-// this will produce: A♠
-
-var fullDeckvalue = ["A",2,3,4,5,6,7,8,9,10,"J","Q","K"]; // fullDeckvalues.indexOf("J") will return 10
-var fullDecksuit = ["S","C","H","D"];
-const A=1
-const J=11
-const Q=12
-const K=13
-
-//var newInput = document.getElementById ("card-input");
-//var gotValue = newInput.addEventListener("click", makecard);
-
 
 class Card {
  constructor(inputValue, inputSuit){
@@ -26,66 +13,63 @@ class Card {
      
  }
  visualRep(){                       //1. set innerhtml to be set to this.value /tempSuit, 2. class to include card class, 3.class to include B/R depending on suit
-     var tempSuit = ""
-     newSpan = document.createElement("span");  // create new span for every card
-     addClassToSpan = newSpan.classList.add("card");
+     let tempSuit = ""
+     let newSpan = document.createElement("span");  // create new span for every card
+     let addClassToSpan = newSpan.classList.add("card");
      
      
-     switch (this.suit) {
+     
+     switch (this.suit) {   
         case "S":
-        tempSuit = SPADE;
+          tempSuit = SPADE;
+          newSpan.classList.add("black");  //classList = attribute of any object that is an html element.
           break;
         case "C":
             tempSuit = CLUB;
+            newSpan.classList.add("black");
           break;
         case "H":
             tempSuit = HEART;
+            newSpan.classList.add("red");   //we are adding the RED class to the ELEMENT of "newSpan"
           break;
         case "D":
             tempSuit = DIAMOND;
+            newSpan.classList.add("red");
           break;
         }
        // 
-        combined = this.value + tempSuit;
+        let combined = this.value + tempSuit;
         newSpan.innerHTML = combined;
         return newSpan;
   }
 };
 
-//
-     
 
-c1 = new Card("A", "S");//instantiate
+window.onload = () => {   //once all html is done being rendered(dom loaded)  THEN DO THIS STUFF!
 
-c1.visualRep();
+submitButton = document.getElementById("submit")
+submitInfo = document.getElementById("card-input")
+submitButton.addEventListener("click", () => {
+        var theInput = "";
+        theInput = submitInfo.value;
+        submitInfo.value= "";
+        theInputSuit = theInput[1];
+        theInputValue = theInput[0];
+        birthedCard = new Card (theInputValue,theInputSuit);
+       birthedElement = birthedCard.visualRep()   // .visalrep()    method of the object (which is of the Card class)
+        parentDiv = document.getElementById("cards");
+        parentDiv.appendChild(birthedElement)
+})
 
-
-//addNewCard(c1.visualRep());   //need to return visual representation of the card.
-
-c2 = new Card("J", "S");
-c3 = new Card("9", "H");
-// make a class which can accept these as their input.
-
-
-
-// Note: Use the span element to output new card.
-//       use the class "card", and a class coresponding to the correct color: red or black
-
-
-
-function separateoutValue(gotValue){ // extract value from input
-   return separateoutValue;
 };
 
-function separateoutSuit(gotValue){ // extract suit from input
-    return separateoutSuit;
- };
-
-function parseArrayForValue(){}
-function parseArrayForSuit(){}
+// user input will come in as "AS" of Ace of spades; "9H" for nine of hearts; "QS" for Queen of spades, etc.
+// theInput[0] == first character in string
+// theINput[1] == second character in string, etc.
 
 
-function makecard (){   //make card logic
+// 1. add event listner to submitbutton, read input box,  clear input box,
+ //take user input and make a new card, add the span , return from visualRep to 
+ //the #cards (ID of cards)(also: classes start with a DOT!) 
+     
 
-}
- 

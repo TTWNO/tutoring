@@ -12,11 +12,11 @@ body {
     background-color: #222222;
 }
 
-#cards {
+#cards {    /*  apply this to the element with the id that is called */
     margin: 15px;
 }
 
-.red {
+.red {                      /*  applied to ANY ELEMENT with that class  */
     color: red;
 }
 .black {
