@@ -1,0 +1,72 @@
+
+
+// first file
+#include <iostream>
+class Book {
+    private:
+    string title;
+    string author;
+    int edition;
+    double price;
+
+    public:
+    string getTitle() const;
+    string getAuthor() const;
+    int getEdition() const;
+    double getPrice() const;
+    void setTitle(string);
+    void setAuthor(string);
+    void setEdition(int);
+    void setPrice(double);
+
+}
+
+string Book::getTitle() const
+{
+    return title;
+}
+
+string Book::getAuthor() const
+{
+    return author;
+}
+
+int Book::getEdition() const
+{
+    return edition;
+}
+
+double Book::getPrice() const
+{
+    return price;
+}
+
+void Book::setTitle(string x)
+{
+    title = x;
+}
+void Book::setAuthor(string x)
+{
+    author = x;
+}
+void Book::setEdition(int x)
+{
+    edition = x;
+}
+void Book::setPrice(double x)
+{
+    price = x;
+}
+
+int main()
+{
+    Book a;
+    Book* x = nullptr;
+    x = &a; // x stores address of a -- Tait
+    x->setTitle("C++ Programming");
+    a.setTitle("Harry Potter");
+    a.setedition(4);
+    a.setPrice(9.99);
+    a.setAuthor("Rowling");
+    cout << a.getTitle() << " by " << a.getAuthor() << " " << a.getEdition() << "th edition is worth $" << a.getPrice << endl;
+}
