@@ -13,7 +13,7 @@ using namespace std;
 
 class Rational {
 private:
-    int numenator;
+    int numerator;
     int denominator;
 public:
    // accesors
@@ -24,7 +24,7 @@ public:
 	void setDenominator(int);
 	// output
 	string output();
-	// input (ask the user for numenator and denominator; e.g. 3/4)
+	// input (ask the user for numerator and denominator; e.g. 3/4)
 	void input();
 	// constructor 1: default, no params n=0/d=1
 	Rational();
@@ -51,49 +51,49 @@ int gcd(int m, int n){
 }
 
 int Rational::getNumenator() const{
-    return numenator;
+    return numerator;
 }
 int Rational::getDenominator() const{
     return denominator;
 }
 void Rational::setNumenator(int n){
-    numenator = n;
+    numerator = n;
 }
 void Rational::setDenominator(int d){
     // TODO: only set if d != 0
     denominator = d;
 }
-// TODO: make 3/-4 appear as -3/4. Negative denominator should show up beforte.
+// TODO: make 3/-4 appear as -3/4. Negative denominator should show up as a negative sign beforte the numerator.
 string Rational::output(){
-    cout << numenator << "/" << denominator;
+    cout << numerator << "/" << denominator;
 }
 void Rational::input(){
     cout<< "n?";
-    cin >> numenator;
+    cin >> numerator;
     cout << "d?";
     cin >> denominator;
 }
 Rational::Rational(){
-    numenator = 0;
+    numerator = 0;
     denominator = 1;
 }
 Rational::Rational(int n){
-    numenator = n;
+    numerator = n;
     denominator = 1;
 }
 Rational::Rational(int n, int d){
-    numenator = n;
+    numerator = n;
     denominator = d;
 }
 
 void Rational::simplify(){
-    int gcdi = gcd(abs(numenator), abs(denominator));
+    int gcdi = gcd(abs(numerator), abs(denominator));
     if (denominator > 0){
         denominator /= gcdi;
-        numenator /= gcdi;
+        numerator /= gcdi;
     } else {
         denominator /= -gcdi;
-        numenator /= -gcdi;
+        numerator /= -gcdi;
     }
 }
 
