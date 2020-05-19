@@ -57,6 +57,24 @@ public:
     void setName(string);    
     void addItem(retailitem);
     void display();
+    void remove(string e){
+        for (int i = 0; i < numItems; i++){
+            if (items[i].getName() == e){
+                numItems--;
+                items[i] = items[numItems]; // use the last item to fill in the hole of the removed item
+                return; // if item found, quit function
+            }
+        }
+    }
+    void sortPriceAsc(){
+        for (int k = 1; k < numItems; k++){
+            for (int i = 0; i < numItems; i++){
+                if (items[i].getPrice() > items[i + 1].getPrice()){
+                    swap(items[i], items[i+1]);
+                }
+            }
+        }
+    }
     Store(int);
     ~Store();
 };
@@ -92,7 +110,7 @@ void Store::display(){
 }
 
 int main(){
-    retailitem a, b("Butter", 3.99), c("egg");
+    retailitem a, b("Butter", 3.99), c("egg", 1.99), d("cheese", 5.99);
     retailitem* x = &a;
     retailitem y[5]; // creates five elements; 5 default constructors
 
@@ -106,6 +124,13 @@ int main(){
     w.addItem(a);
     w.addItem(b);
     w.addItem(c);
+    w.addItem(d);
+    w.addItem(c);
+    cout << "Before: " << endl;
+    w.display();
+    w.remove("Butter");
+    cout << endl << endl << "After: " << endl; // endls for padding
+    w.display();
     w.addItem(retailitem("Lawnmower", 199.99));
 
     // destructor is run 8 times: a, b, c, and for each element of y

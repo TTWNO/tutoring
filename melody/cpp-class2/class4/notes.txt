@@ -1,0 +1,75 @@
+---NOTES---
+
+
+We start out with this array:
+array[0] -> "Egg", 0.99
+array[1] -> "Milk", 0.99
+array[2] -> "Lawnmower", 199.99
+.... -> empty; null pointer; NULL; does not exist
+
+To remove the first (0th indexed) item:
+You must shift all items down by one index, or fill the newly removed item with the last filled item
+
+Shifting all by one:
+stage one:
+array[0] -> null
+array[1] -> "Milk", 0.99
+array[2] -> "Lawnmower", 199.99
+
+Stage two:
+array[0] -> "Milk", 0.99
+array[1] -> null
+array[2] -> "Lawnmower", 199.99
+
+Stage three:
+array[0] -> "milk", 0.99
+array[1] -> "lawnmower", 199.99
+array[2] -> null
+
+Once all the items have been shifted into the porper places, you can finally decreese the number of items:
+numItems--;
+Telling the store that the new "null" at [2] is no longer a part of the store.
+
+Using the final item to fill the newly deleted item:
+Stage one:
+array[0] -> null
+array[1] -> "Milk", 0.99
+array[2] -> "Lawnmower", 199.99
+
+Stage two:
+array[0] -> "Lawnmower", 199.99
+array[1] -> "Milk", 0.99
+array[2] -> null
+
+You can now decreese the number of items like before:
+numItems--;
+This is much faster than the other method, but it does not preserve order.
+
+
+Queues:
+Last-in-first-out (LIFO)
+
+(dirty)
+--- plate 1
+--- plate 2
+--- plate 3
+--- plate 4
+
+you clean them one by one, moving them into a stack.
+
+(clean)
+--- plate 4
+--- plate 3
+--- plate 2
+--- plate 1
+
+For example:
+To add an element to a stack, your "push" an item onto the stack.
+Like pushing a plate onto the top of a stack of dishes.
+
+To remove an element, you "pop" an item off the top of the stack.
+Like taking a plate from the top of a stack of dishes.
+
+
+
+
