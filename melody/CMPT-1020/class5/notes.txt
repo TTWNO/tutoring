@@ -1,0 +1,45 @@
+
+Instance varialbe are the standard variables you use in your classes.
+Static varialbes are variables that are constant across object instantiations.
+
+So:
+Person a, b, c;
+a, b, c will each have their own fullName and age.
+
+But a static variable will be the same wether you use a, b, or c.
+a.maxAge, b.maxAge, and c.maxAge will all be 150.
+
+You can deifne a static variable with the keyword "static":
+static int maxAge = 150;
+
+This defines an int that is *shared* across the objects.
+If it is changed, it is then changed in every object.
+a.maxAge = 200
+would make b.maxAge be 200 as well.
+
+j = i = sqrt(-1)
+4+j3; 4 is the "real part"; 3j is the "imagineary" part.
+(4+j3) + (6+j2) = 10+j5
+
+The real part and the imaginary part ar applied seperately.
+
+(4+3j) - (6+2j) = (-2+5j)
+
+(4+3j) * (6+2j) = (24+6j)
+
+(4+3j) / (6+2j) = (.666+.666j)
+
+
+Inheritence:
+ 
+A student class may require information about GPA, or year of study.
+An Employee class may reuqire information about salary, or years worked.
+
+All of these share that they want personal information about a user:
+ firstname, lastname, maybe a SIN.
+Perhaps a Person class could store that.
+
+The Person class is a superclass, parent class, or base class, depending on who you ask.
+The Student and Employee classes are subclasses, child classes
+
+

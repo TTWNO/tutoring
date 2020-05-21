@@ -76,6 +76,18 @@ public:
         }
     }
     Store(int);
+    // copy constructor
+    Store(const Store& existing)
+    {
+        this->name = existing.name;
+        this->numItems = existing.numItems;
+        this->capacity = existing.capacity;
+        this->items = new retailitem[this->capacity];
+        // copy individual items
+        for (int i = 0; i < this->capacity; i++){
+            this->items[i] = existing.items[i];
+        }
+    }
     ~Store();
 };
 
@@ -114,12 +126,13 @@ int main(){
     retailitem* x = &a;
     retailitem y[5]; // creates five elements; 5 default constructors
 
-    Store w(1000);
+    Store w(1000), g(1000);
 
     x->output(); // equiv. to a.output()
     b.output();
     c.output();
 
+    // adding and removing items
     w.setName( "Walmart");
     w.addItem(a);
     w.addItem(b);
@@ -132,6 +145,13 @@ int main(){
     cout << endl << endl << "After: " << endl; // endls for padding
     w.display();
     w.addItem(retailitem("Lawnmower", 199.99));
+
+    // copying 
+    g = w; // copies all information, including the array from w. This is possible because of the copy constructor 
+    g.display(); // same as w.display() at this time
+
+    g.addItem(retailitem("Winchester .22", 249.99));
+    g.display(); // now will include a new Winchester; w will not contain the Winchester
 
     // destructor is run 8 times: a, b, c, and for each element of y
     return 0;
