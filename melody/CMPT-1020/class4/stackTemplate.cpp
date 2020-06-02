@@ -15,9 +15,9 @@ public:
     ~Stack();
 
     // stack operations
-    void push(T);
-    void pop(T&); // set the int& as the return value instead of returning the value; very common
-    void peek(T&);
+	void push(T);
+	void pop(T&); // set the int& as the return value instead of returning the value; very common
+	void peek(T&);
     bool isFull() const;
     bool isEmpty() const;
     void display() const;
