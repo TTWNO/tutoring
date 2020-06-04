@@ -28,7 +28,9 @@ int ifact(int x)
     return factorial;
 }
 
-// TODO: review infraction
+/* This version will not compile under GCC (using the GCC compiler).
+* GCC requires that a function have a garunteed return.
+*/
 int rfact_mohammed(int x)
 {
     if (x == 0)  // can also be x == 1; more efficient by one function call
@@ -37,7 +39,7 @@ int rfact_mohammed(int x)
         return x * rfact_mohammed(x - 1);
 }
 
-// assumes positive value >= 1
+// assumes positive value >= 1; will run infinitely if x <= 0
 int rfact(int x)
 {
     if (x == 1)

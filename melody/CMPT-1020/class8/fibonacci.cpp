@@ -22,4 +22,4 @@ int fibbonaci(int x)
         return 1;
     else
         return fibbonaci(x-1) + fibbonaci(x-2);
-    }   
+}   

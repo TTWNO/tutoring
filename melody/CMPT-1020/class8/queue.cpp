@@ -1,11 +1,27 @@
 #include <iostream>
 
 using namespace std;
+
+// Queue's are First In First Out (FIFO) systems.
+// Much like a grocery store line.
 template <class T>
 class Queue
 {
 private:
-    T* queueArray;
+    T* queueArray; // T* = arbitrarily allocated array of Ts
+    /*
+     * Use front and back instead of moving all the items each time you nheed to pop
+     * 
+     * Imagine this scenario:
+     * You have a Queue of length 5. You have 3 values in it: [5, 6, 3].
+     * Your bottom would be set to 0, and the top set to 2.
+     * Now you want to dequeue the zeroth element. So you pop 5.
+     * Instead of moving 6 to index zero, and moving 3 to index 1, simply move the head to 1 so that when you go through your list next time it will start reading from memory location 1, instead of zero.
+     * 
+     * You can also make this wrap around by checking when the 
+     */
+    int top;
+    int bottom;
     int capacity;
     int numItems;
 
@@ -14,6 +30,8 @@ public:
         queueArray = new T[size];
         capacity = size;
         numItems = 0;
+        top = -1;
+        bottom = -1;
 	}
 	~Queue(){
 		delete[] queueArray;
@@ -26,7 +44,9 @@ public:
         }
         else
         {
-            queueArray[numItems] = e;
+            // % capacity = up to capacity-1, if it is equal to capacity, make 0
+            bottom = (bottom + 1) % capacity;
+            queueArray[bottom] = e;
             ++numItems;
         }
         
@@ -39,12 +59,9 @@ public:
         }
         else
         {
-            e = queueArray[0];
-
-            for (int i = 0; i < numItems - 1; ++i)
-            {
-                queueArray[i] = queueArray[i+1];
-            }
+            // add one to top up to capacity; if == capacity, make 0
+            top = (top + 1) % capacity; 
+            e = queueArray[top];
             --numItems;
         }
     }
@@ -58,6 +75,7 @@ public:
     }
     void display()
     {
+        int index = top;
         if (isEmpty())
         {
             cout << "The queue is empty" << endl;
@@ -66,6 +84,7 @@ public:
         cout << "These are the elements of the array: " << endl;
         for (int x = 0; x < numItems; ++x)
         {
+            index = (index + 1) % capacity;
             cout << "[" << x << "]" << ": " << queueArray[x] << endl;
         }
     }
@@ -102,5 +121,5 @@ int main()
 	name.enqueue("me");
 	name.display();
 
-    	return 0;
+    return 0;
 }
