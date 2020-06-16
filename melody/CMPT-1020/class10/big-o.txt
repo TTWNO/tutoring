@@ -1,0 +1,14 @@
+
+Big O notation is how you declare the complexity of an algorithm.
+
+A standard search function like linear sort will possibly take as long as the array is.
+So if the array in 100 long, it can take up to 100 cycles to get to it.
+If the length of the array is n, then the Big O notation of the complexity is O(n)
+
+The most common big O notations are:
+O(n^2)
+O(n log n)
+O(log n): binary search
+O(n): linear search
+O(1): change an element of an array; any constant time operation
+
