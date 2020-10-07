@@ -59,26 +59,42 @@ int RangeRand(int min, int max) {
 
 string PickStat() {
 	// to_string(123); // "123"
+
 	int r = RangeRand(6, 18); // bynver vetweeb 19 abd 29 ubckysive
-	return to_string(r);
+	int i;
+	string stat = to_string(r);
+	if (r == 18)
+	{
+		i = RangeRand(0, 100);
+		stat += " / " + to_string(i);
+	}
+	return stat;
 }
 
 int main() {
-	/*	Remember to ask the user for a seed value. If
-		the seed value is 0, use time(). If the value 
-		is not 0, use IT as the seed.
+	string name;
 
-		If you use cin to get the seed value, remember
-		to use cin.ignore() before using getline(). See
-		the README.md.
+	while(name != "quit") {
 
-		All your code goes below. Remember that your
-		program is supposed to ask for character names
-		over and over until the user enters 'quit'.
+		cout << "Enter character's name - use \"quit\" to exit: " << endl;
+		cin >> name;
+
+		cout << name
+
+	}
+	return 0;
+}
+/*	enter name of character
+	cin >> name
+	while character != quit
+	cout << name << "(" << ChooseRace<< ")" << "is " ChooseAlignment << "and " << ChooseBehavior
+	cout << "Health: " << RangeRand << endl;
+	cout << "Strength: " << PickStat << endl;
+	cout << "Dexterity: " << PickStat << endl;
+	cout << "Intelligence: " << PickStat << endl;
+	cout << "Charisma: " << Pickstat << endl;
+	cout "Wisdom: " << PickStat << endl;
 	*/
-
 
 	/*	All your code comes before this.
 	*/
-	return 0;
-}
