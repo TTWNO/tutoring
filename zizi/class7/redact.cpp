@@ -2,43 +2,31 @@
 	Redact-o-matic
 */
 
-/**
- *
-Phrase to redact: and
-
-I went to the store and bought a sour pickle sandwhich.
-I went to the store *** bought a sour pickle s***which.
-Show me your gameboy and PS5!
-Show me your gameboy *** PS5!
-More input... And more!
-More input... And more!
- */
-
-
 #include <string>
 #include <iostream>
 
 using namespace std;
 
 string redact;
-string temp;
+string stars;
+int redact_index;
 
 int main() {
-
 	cout << "Please enter phrase to redact: " << endl;
 	cin >> redact;
-    string str;
+	string line;
 
     for (int i = 0; i < redact.length(); i++) {
-    (temp.push_back('*'));
+    	stars.push_back('*');
 	}
-		
 
-	while (getline(cin, str))
+	while (getline(cin, line))
     {
-    //    str.replace(redact, '*');
-		
-
-		redact.length();
+		redact_index = line.find(redact);
+		while (redact_index != string::npos) {
+			line.replace(redact_index, redact.length() , stars);
+			redact_index = line.find(redact);
+		}
+		cout << line << endl;
 	}
 }
