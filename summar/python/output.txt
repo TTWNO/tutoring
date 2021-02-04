@@ -1,0 +1,95 @@
+archlinux
+processor	: 0
+
+vendor_id	: GenuineIntel
+
+model		: 158
+
+model name	: Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz
+
+cache size	: 9216 KB
+
+root: root,root
+bin: sys,daemon,bin
+daemon: adm,bin,daemon
+mail: mail
+ftp: ftp
+http: http
+nobody: nobody
+dbus: dbus
+systemd-journal-remote: systemd-journal-remote
+systemd-network: systemd-network
+systemd-resolve: systemd-resolve
+systemd-timesync: systemd-timesync
+systemd-coredump: systemd-coredump
+uuidd: uuidd
+avahi: avahi
+nvidia-persistenced: nvidia-persistenced
+tarf: wheel,audio,uucp,video,bumblebee,docker,tarf
+polkitd: proc,polkitd
+rtkit: rtkit
+colord: colord
+tor: tor
+tait: tait
+tox-bootstrapd: tox-bootstrapd
+geoclue: geoclue
+mysql: mysql
+usbmux: usbmux
+dhcpcd: dhcpcd
+named: named
+redis: redis
+gitea: gitea
+git: git
+ntp: ntp
+transmission: transmission
+openvpn: openvpn
+pi: pi
+mongodb: daemon,mongodb
+bytetools: bytetools
+brltty: root,tty,audio,input,uucp,brlapi,brltty
+mysqlrouter: mysqlrouter
+  UNIT                                                                                      LOAD      ACTIVE SUB     DESCRIPTION                                                                  
+  bluetooth.service                                                                         loaded    active running Bluetooth service                                                            
+  cronie.service                                                                            loaded    active running Periodic Command Scheduler                                                   
+  dbus.service                                                                              loaded    active running D-Bus System Message Bus                                                     
+  dhcpcd.service                                                                            loaded    active running dhcpcd on all interfaces                                                     
+  getty@tty1.service                                                                        loaded    active running Getty on tty1                                                                
+  kmod-static-nodes.service                                                                 loaded    active exited  Create list of static device nodes for the current kernel                    
+  ldconfig.service                                                                          loaded    active exited  Rebuild Dynamic Linker Cache                                                 
+  lvm2-lvmetad.service                                                                      loaded    active running LVM2 metadata daemon                                                         
+  lvm2-monitor.service                                                                      loaded    active exited  Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
+  lvm2-pvscan@254:0.service                                                                 loaded    active exited  LVM2 PV scan on device 254:0                                                 
+● mariadb.service                                                                           not-found active running mariadb.service                                                              
+  polkit.service                                                                            loaded    active running Authorization Manager                                                        
+  rtkit-daemon.service                                                                      loaded    active running RealtimeKit Scheduling Policy Service                                        
+● shadow.service                                                                            loaded    failed failed  Verify integrity of password and group files                                 
+  systemd-backlight@backlight:intel_backlight.service                                       loaded    active exited  Load/Save Screen Backlight Brightness of backlight:intel_backlight           
+  systemd-backlight@leds:asus::kbd_backlight.service                                        loaded    active exited  Load/Save Screen Backlight Brightness of leds:asus::kbd_backlight            
+  systemd-fsck-root.service                                                                 loaded    active exited  File System Check on Root Device                                             
+  systemd-fsck@dev-disk-by\x2duuid-ce7bd708\x2d94aa\x2d487e\x2db3db\x2de6bb2fd638ba.service loaded    active exited  File System Check on /dev/disk/by-uuid/ce7bd708-94aa-487e-b3db-e6bb2fd638ba  
+  systemd-journal-catalog-update.service                                                    loaded    active exited  Rebuild Journal Catalog                                                      
+  systemd-journal-flush.service                                                             loaded    active exited  Flush Journal to Persistent Storage                                          
+  systemd-journald.service                                                                  loaded    active running Journal Service                                                              
+  systemd-logind.service                                                                    loaded    active running User Login Management                                                        
+  systemd-modules-load.service                                                              loaded    active exited  Load Kernel Modules                                                          
+  systemd-networkd.service                                                                  loaded    active running Network Service                                                              
+  systemd-random-seed.service                                                               loaded    active exited  Load/Save Random Seed                                                        
+  systemd-remount-fs.service                                                                loaded    active exited  Remount Root and Kernel File Systems                                         
+  systemd-sysctl.service                                                                    loaded    active exited  Apply Kernel Variables                                                       
+  systemd-sysusers.service                                                                  loaded    active exited  Create System Users                                                          
+  systemd-tmpfiles-setup-dev.service                                                        loaded    active exited  Create Static Device Nodes in /dev                                           
+  systemd-tmpfiles-setup.service                                                            loaded    active exited  Create Volatile Files and Directories                                        
+  systemd-udev-trigger.service                                                              loaded    active exited  Coldplug All udev Devices                                                    
+  systemd-udevd.service                                                                     loaded    active running Rule-based Manager for Device Events and Files                               
+  systemd-update-done.service                                                               loaded    active exited  Update is Completed                                                          
+  systemd-update-utmp.service                                                               loaded    active exited  Update UTMP about System Boot/Shutdown                                       
+  systemd-user-sessions.service                                                             loaded    active exited  Permit User Sessions                                                         
+  upower.service                                                                            loaded    active running Daemon for power management                                                  
+  user-runtime-dir@1000.service                                                             loaded    active exited  User Runtime Directory /run/user/1000                                        
+  user@1000.service                                                                         loaded    active running User Manager for UID 1000                                                    
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+38 loaded units listed. Pass --all to see loaded but inactive units, too.
+To show all installed unit files use 'systemctl list-unit-files'.
